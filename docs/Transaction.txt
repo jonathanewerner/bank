@@ -1,0 +1,17 @@
+transaction_id         | Internal figo Connect transaction ID
+account_id             | Internal figo Connect account ID
+name                   | Name of originator or recipient
+account_number         | Account number of originator or recipient
+bank_code              | Bank code of originator or recipient
+bank_name              | Bank name of originator or recipient.
+amount                 | Transaction amount
+currency               | Three-character currency code
+booking_date           | Booking date
+value_date             | Value date
+purpose                | Purpose text.
+type                   | Transaction type
+booking_text           | Booking text.
+booked                 | Booked or pending
+creation_timestamp     | Internal creation timestamp on the figo Connect server
+modification_timestamp | Internal modification timestamp on the figo Connect server
+visited                | This flag indicates whether the transaction has already been marked as visited by the user

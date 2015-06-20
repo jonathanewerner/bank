@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "modules": true,
+    "blockBindings": true
+  },
+  "rules": {
+    "quotes": [2, "single"],
+    "eol-last": [0],
+    "no-alert": 0,
+    "no-mixed-requires": [0],
+    "no-underscore-dangle": [0],
+    "strict": [2, "never"]
+  },
+  "globals": {
+  }
+}
