@@ -5,8 +5,8 @@
 a banking cli that uses the figo api.
 
 
-### get a session id from figo
-- run `node build/server.js`
+### get a session token from figo
+- run `webpack`; then run `node build/server.js`
 - open `localhost:3000/page`
 - login to figo, supply the rights you want to give
 - upon connecting you will see the session-id as a `res.write` output
