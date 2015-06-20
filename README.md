@@ -1,3 +1,5 @@
+### note: right now this is experimental and not usable for other persons, as you need a client secret for api access.
+
 # bank
 
 a banking cli that uses the figo api.
