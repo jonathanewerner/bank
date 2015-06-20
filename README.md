@@ -10,7 +10,7 @@ a banking cli that uses the figo api.
 - open `localhost:3000/page`
 - login to figo, supply the rights you want to give
 - upon connecting you will see the session-token as a `res.write` output
-- save the string into `configuration/constants.js` under `SESSION_ID`
+- save the string into `configuration/constants.js` under `SESSION_TOKEN`
 - optional: get a new session id by `localhost:3000/logout` and repeating the steps
 
 
