@@ -12,7 +12,7 @@ const DATABASE_FILE = 'database/transactions.json';
 const ALIASES_FILE = 'database/aliases.json';
 const CATEGORIES_FILE = 'database/categories.json';
 const TIME_TAKEN = 'Time taken';
-const RUN_ONLINE = false;
+const RUN_ONLINE = true;
 
 let SUM = 0;
 
@@ -106,13 +106,22 @@ function fetchNewTransactions(transactions, sessionToken) {
 }
 
 async function main(sessionToken) {
-  try { /// reaaaally ? 
-  let transactions = fs.existsSync(DATABASE_FILE) ?
-    JSON.parse(fs.readFileSync(DATABASE_FILE, 'utf8')) : [];
+  try {
+    let transactions = fs.existsSync(DATABASE_FILE) ?
+      JSON.parse(fs.readFileSync(DATABASE_FILE, 'utf8')) : [];
 
-  if (sessionToken) {
-    transactions = await fetchNewTransactions(transactions, sessionToken);
+    if (sessionToken) {
+      transactions = await fetchNewTransactions(transactions, sessionToken);
+    }
+
+    printTransactions(transactions);
+
+  } catch (err) { 
+    console.info('[index.js] ', err.stack);
   }
+}
+
+function printTransactions(transactions) {
   const ALL = false;
 
   const categories = readJson(CATEGORIES_FILE);
@@ -151,11 +160,6 @@ async function main(sessionToken) {
   printTable('Rest', restTransactions);
 
   console.info('OVERALL SUM:', formatEuro(SUM));
-
-  } catch (err) { // this really sucks. does somebody know a better way
-                  // to deal with error handling in es7 async functions..
-    console.info('[index.js] ', err.stack);
-  }
 }
 
 function filterWithRegex(transactions, regexString, invert=false) {
